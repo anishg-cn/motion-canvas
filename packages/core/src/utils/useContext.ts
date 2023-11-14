@@ -1,3 +1,4 @@
+import {CanvasRenderingContext2D} from 'skia-canvas';
 import {useScene} from './useScene';
 
 /**

@@ -130,7 +130,7 @@ function getAllowList() {
           typeof parsedJson,
       );
     }
-    const validatedEntries = [];
+    const validatedEntries = [] as any[];
     for (const entry of parsedJson) {
       if (typeof entry !== 'string') {
         useLogger().warn(

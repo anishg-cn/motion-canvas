@@ -25,7 +25,8 @@
     "types"
   ],
   "dependencies": {
-    "@motion-canvas/core": "^3.11.0"
+    "@motion-canvas/core": "^3.11.0",
+    "skia-canvas": "^1.0.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",

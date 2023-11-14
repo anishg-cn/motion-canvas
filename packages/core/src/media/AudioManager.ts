@@ -1,7 +1,7 @@
-import {AudioData} from './AudioData';
+import {Logger} from '../app';
 import {ValueDispatcher} from '../events';
 import {useLogger} from '../utils';
-import {Logger} from '../app';
+import {AudioData} from './AudioData';
 
 export class AudioManager {
   public get onDataChanged() {
@@ -117,7 +117,7 @@ export class AudioManager {
     const sampleSize = 256;
     const samples = ~~(audioBuffer.length / sampleSize);
 
-    const peaks = [];
+    const peaks = [] as any[];
     let absoluteMax = 0;
     for (
       let channelId = 0;

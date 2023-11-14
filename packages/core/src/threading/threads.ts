@@ -1,8 +1,8 @@
 import {decorate, threadable} from '../decorators';
-import {Thread} from './Thread';
-import {isThreadGenerator, ThreadGenerator} from './ThreadGenerator';
-import {setTaskName} from './names';
 import {usePlayback} from '../utils';
+import {Thread} from './Thread';
+import {ThreadGenerator, isThreadGenerator} from './ThreadGenerator';
+import {setTaskName} from './names';
 
 /**
  * Check if the given value is a [Promise][promise].
@@ -64,7 +64,7 @@ export function* threads(
 
   let threads: Thread[] = [rootThread];
   while (threads.length > 0) {
-    const newThreads = [];
+    const newThreads = [] as any[];
     const queue = [...threads];
     const dt = playback.framesToSeconds(1) * playback.speed;
 

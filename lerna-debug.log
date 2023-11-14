@@ -1,0 +1,4 @@
+9 error Error: A GH_TOKEN environment variable is required.
+9 error     at createGitHubClient (D:\dev\motion-canvas-player\motion-canvas\node_modules\@lerna\github-client\lib\github-client.js:17:11)
+9 error     at createReleaseClient (D:\dev\motion-canvas-player\motion-canvas\node_modules\@lerna\version\lib\create-release.js:20:14)
+9 error     at VersionCommand.configureProperties (D:\dev\motion-canvas-player\motion-canvas\node_modules\@lerna\version\index.js:83:58)

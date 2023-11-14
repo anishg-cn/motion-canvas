@@ -1,3 +1,4 @@
+import {CanvasRenderingContext2D} from 'skia-canvas';
 import {SignalValue} from '../signals/types';
 import {useScene} from '../utils';
 

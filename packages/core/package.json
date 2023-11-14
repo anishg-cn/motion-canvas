@@ -1,6 +1,6 @@
 {
-  "name": "@motion-canvas/core",
-  "version": "3.11.0",
+  "name": "@anishg-cn/motion-canvas-core",
+  "version": "3.12.1",
   "description": "Web-based tool for creating animations programmatically",
   "main": "lib/index.js",
   "author": "motion-canvas",
@@ -28,11 +28,13 @@
   },
   "dependencies": {
     "@types/chroma-js": "^2.1.4",
-    "chroma-js": "^2.4.2"
+    "chroma-js": "^2.4.2",
+    "skia-canvas": "^1.0.1"
   },
   "devDependencies": {
     "@motion-canvas/internal": "0.0.0",
     "jsdom": "^21.1.0",
     "vitest": "^0.29.2"
-  }
+  },
+  "gitHead": "fd8446f8e3535d9c708d188f6fa71e1049adc523"
 }

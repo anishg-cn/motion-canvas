@@ -1,5 +1,6 @@
-import {Scene, SceneRenderEvent} from './Scene';
+import {CanvasRenderingContext2D} from 'skia-canvas';
 import {EventDispatcher} from '../events';
+import {Scene, SceneRenderEvent} from './Scene';
 
 /**
  * Lifecycle events for {@link Scene} that are cleared on every reset.

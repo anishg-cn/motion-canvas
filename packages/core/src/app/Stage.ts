@@ -1,8 +1,9 @@
-import {getContext} from '../utils';
+import {Canvas, CanvasRenderingContext2D} from 'skia-canvas';
 import {Scene} from '../scenes';
-import {CanvasColorSpace, Vector2} from '../types';
-import type {Color} from '../types';
 import {unwrap} from '../signals';
+import type {Color} from '../types';
+import {CanvasColorSpace, Vector2} from '../types';
+import {getContext} from '../utils';
 
 export interface StageSettings {
   size: Vector2;
@@ -22,9 +23,9 @@ export class Stage {
   private colorSpace: CanvasColorSpace = 'srgb';
   private size = Vector2.zero;
 
-  public readonly finalBuffer: HTMLCanvasElement;
-  private readonly currentBuffer: HTMLCanvasElement;
-  private readonly previousBuffer: HTMLCanvasElement;
+  public readonly finalBuffer: Canvas;
+  private readonly currentBuffer: Canvas;
+  private readonly previousBuffer: Canvas;
 
   private context: CanvasRenderingContext2D;
   private currentContext: CanvasRenderingContext2D;
@@ -35,9 +36,9 @@ export class Stage {
   }
 
   public constructor() {
-    this.finalBuffer = document.createElement('canvas');
-    this.currentBuffer = document.createElement('canvas');
-    this.previousBuffer = document.createElement('canvas');
+    this.finalBuffer = new Canvas();
+    this.currentBuffer = new Canvas();
+    this.previousBuffer = new Canvas();
 
     const colorSpace = this.colorSpace;
     this.context = getContext({colorSpace}, this.finalBuffer);

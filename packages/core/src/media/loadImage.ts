@@ -1,6 +1,7 @@
+import {Canvas as $Canvas, CanvasRenderingContext2D, Image} from 'skia-canvas';
 import {getContext} from '../utils';
 
-let Canvas: HTMLCanvasElement;
+let Canvas: $Canvas;
 let Context: CanvasRenderingContext2D;
 
 export type ImageDataSource = CanvasImageSource & {
@@ -8,7 +9,7 @@ export type ImageDataSource = CanvasImageSource & {
   height: number;
 };
 
-export function loadImage(source: string): Promise<HTMLImageElement> {
+export function loadImage(source: string): Promise<Image> {
   const image = new Image();
   image.src = source;
   return new Promise((resolve, reject) => {
@@ -21,12 +22,12 @@ export function loadImage(source: string): Promise<HTMLImageElement> {
   });
 }
 
-export function loadAnimation(sources: string[]): Promise<HTMLImageElement[]> {
+export function loadAnimation(sources: string[]): Promise<Image[]> {
   return Promise.all(sources.map(loadImage));
 }
 
-export function getImageData(image: ImageDataSource) {
-  Canvas ??= document.createElement('canvas');
+export function getImageData(image: Image) {
+  Canvas ??= new $Canvas();
   Context ??= getContext({willReadFrequently: true}, Canvas);
 
   Canvas.width = image.width;

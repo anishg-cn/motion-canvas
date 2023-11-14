@@ -1,6 +1,7 @@
-import type {RendererResult, RendererSettings} from './Renderer';
-import type {Project} from './Project';
+import {Canvas} from 'skia-canvas';
 import type {MetaField} from '../meta';
+import type {Project} from './Project';
+import type {RendererResult, RendererSettings} from './Renderer';
 
 /**
  * The static interface for exporters.
@@ -79,7 +80,7 @@ export interface Exporter {
    * @param signal - An abort signal triggered if the user aborts the rendering.
    */
   handleFrame(
-    canvas: HTMLCanvasElement,
+    canvas: Canvas,
     frame: number,
     sceneFrame: number,
     sceneName: string,

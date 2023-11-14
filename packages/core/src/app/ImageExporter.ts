@@ -1,8 +1,5 @@
-import {CanvasOutputMimeType} from '../types';
-import type {Project} from './Project';
-import type {Exporter} from './Exporter';
-import type {Logger} from './Logger';
-import type {RendererSettings} from './Renderer';
+import {Canvas} from 'skia-canvas';
+import {EventDispatcher} from '../events';
 import {
   BoolMetaField,
   EnumMetaField,
@@ -11,8 +8,12 @@ import {
   ValueOf,
 } from '../meta';
 import {clamp} from '../tweening';
+import {CanvasOutputMimeType} from '../types';
+import type {Exporter} from './Exporter';
+import type {Logger} from './Logger';
+import type {Project} from './Project';
+import type {RendererSettings} from './Renderer';
 import {FileTypes} from './presets';
-import {EventDispatcher} from '../events';
 
 const EXPORT_FRAME_LIMIT = 256;
 const EXPORT_RETRY_DELAY = 1000;
@@ -89,7 +90,7 @@ export class ImageExporter implements Exporter {
   }
 
   public async handleFrame(
-    canvas: HTMLCanvasElement,
+    canvas: Canvas,
     frame: number,
     sceneFrame: number,
     sceneName: string,
@@ -108,10 +109,18 @@ export class ImageExporter implements Exporter {
       }
 
       this.frameLookup.add(frame);
+
+      let data;
+      if (this.fileType === 'image/jpeg') {
+        data = await canvas.toDataURL('jpeg', {quality: this.quality});
+      } else {
+        data = await canvas.toDataURL('png');
+      }
+
       import.meta.hot!.send('motion-canvas:export', {
         frame,
         sceneFrame,
-        data: canvas.toDataURL(this.fileType, this.quality),
+        data,
         mimeType: this.fileType,
         subDirectories: this.groupByScene
           ? [this.projectName, sceneName]

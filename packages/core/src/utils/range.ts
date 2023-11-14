@@ -47,7 +47,7 @@ export function range(first: number, second?: number, step?: number): number[] {
 
   step = step === undefined ? (from < to ? 1 : -1) : step;
 
-  const array = [];
+  const array = [] as any[];
   let length = Math.max(Math.ceil((to - from) / step), 0);
   let index = 0;
 
