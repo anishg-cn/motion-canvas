@@ -1,0 +1,1 @@
+{"version":3,"file":"Vector2MetaField.d.ts","sourceRoot":"","sources":["../../src/meta/Vector2MetaField.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,SAAS,EAAC,MAAM,aAAa,CAAC;AACtC,OAAO,EAAC,eAAe,EAAE,OAAO,EAAC,MAAM,UAAU,CAAC;AAElD;;GAEG;AACH,qBAAa,gBAAiB,SAAQ,SAAS,CAAC,eAAe,EAAE,OAAO,CAAC;IACvE,SAAgB,IAAI,SAAkB;IAEtB,KAAK,CAAC,KAAK,EAAE,eAAe,GAAG,OAAO;IAItC,SAAS,IAAI,eAAe;CAG7C"}

@@ -1,0 +1,23 @@
+function isClassComponent(
+// eslint-disable-next-line @typescript-eslint/ban-types
+fn) {
+    return !!fn.prototype?.isClass;
+}
+export const Fragment = Symbol.for('@motion-canvas/2d/fragment');
+export function jsx(type, config) {
+    const { ref, children, ...rest } = config;
+    const flatChildren = Array.isArray(children) ? children.flat() : children;
+    if (type === Fragment) {
+        return flatChildren;
+    }
+    if (isClassComponent(type)) {
+        const node = new type({ ...rest, children: flatChildren });
+        ref?.(node);
+        return node;
+    }
+    else {
+        return type({ ...rest, ref, children: flatChildren });
+    }
+}
+export { jsx as jsxs };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoianN4LXJ1bnRpbWUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zcmMvanN4LXJ1bnRpbWUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0JBLFNBQVMsZ0JBQWdCO0FBQ3ZCLHdEQUF3RDtBQUN4RCxFQUFZO0lBRVosT0FBTyxDQUFDLENBQUMsRUFBRSxDQUFDLFNBQVMsRUFBRSxPQUFPLENBQUM7QUFDakMsQ0FBQztBQUVELE1BQU0sQ0FBQyxNQUFNLFFBQVEsR0FBRyxNQUFNLENBQUMsR0FBRyxDQUFDLDRCQUE0QixDQUFDLENBQUM7QUFDakUsTUFBTSxVQUFVLEdBQUcsQ0FDakIsSUFBMkQsRUFDM0QsTUFBZ0I7SUFFaEIsTUFBTSxFQUFDLEdBQUcsRUFBRSxRQUFRLEVBQUUsR0FBRyxJQUFJLEVBQUMsR0FBRyxNQUFNLENBQUM7SUFDeEMsTUFBTSxZQUFZLEdBQUcsS0FBSyxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsUUFBUSxDQUFDLElBQUksRUFBRSxDQUFDLENBQUMsQ0FBQyxRQUFRLENBQUM7SUFFMUUsSUFBSSxJQUFJLEtBQUssUUFBUSxFQUFFO1FBQ3JCLE9BQU8sWUFBWSxDQUFDO0tBQ3JCO0lBRUQsSUFBSSxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsRUFBRTtRQUMxQixNQUFNLElBQUksR0FBRyxJQUFJLElBQUksQ0FBQyxFQUFDLEdBQUcsSUFBSSxFQUFFLFFBQVEsRUFBRSxZQUFZLEVBQUMsQ0FBQyxDQUFDO1FBQ3pELEdBQUcsRUFBRSxDQUFDLElBQUksQ0FBQyxDQUFDO1FBQ1osT0FBTyxJQUFJLENBQUM7S0FDYjtTQUFNO1FBQ0wsT0FBTyxJQUFJLENBQUMsRUFBQyxHQUFHLElBQUksRUFBRSxHQUFHLEVBQUUsUUFBUSxFQUFFLFlBQVksRUFBQyxDQUFDLENBQUM7S0FDckQ7QUFDSCxDQUFDO0FBQ0QsT0FBTyxFQUFDLEdBQUcsSUFBSSxJQUFJLEVBQUMsQ0FBQyJ9

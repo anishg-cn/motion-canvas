@@ -1,0 +1,6 @@
+import { deepLerp } from '../tweening';
+import { SignalContext } from '../signals';
+export function createSignal(initial, interpolation = deepLerp, owner) {
+    return new SignalContext(initial, interpolation, owner).toSignal();
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3JlYXRlU2lnbmFsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL3NpZ25hbHMvY3JlYXRlU2lnbmFsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBQyxRQUFRLEVBQXdCLE1BQU0sYUFBYSxDQUFDO0FBQzVELE9BQU8sRUFBQyxhQUFhLEVBQTRCLE1BQU0sWUFBWSxDQUFDO0FBRXBFLE1BQU0sVUFBVSxZQUFZLENBQzFCLE9BQTZCLEVBQzdCLGdCQUErQyxRQUFRLEVBQ3ZELEtBQWM7SUFFZCxPQUFPLElBQUksYUFBYSxDQUN0QixPQUFPLEVBQ1AsYUFBYSxFQUNiLEtBQUssQ0FDTixDQUFDLFFBQVEsRUFBRSxDQUFDO0FBQ2YsQ0FBQyJ9

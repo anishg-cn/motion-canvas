@@ -1,0 +1,15 @@
+import { Vector2 } from '@motion-canvas/core/lib/types/Vector';
+import { compound } from './compound';
+import { wrapper } from './signal';
+export function vector2Signal(prefix) {
+    return (target, key) => {
+        compound(typeof prefix === 'object'
+            ? prefix
+            : {
+                x: prefix ? `${prefix}X` : 'x',
+                y: prefix ? `${prefix}Y` : 'y',
+            })(target, key);
+        wrapper(Vector2)(target, key);
+    };
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidmVjdG9yMlNpZ25hbC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9kZWNvcmF0b3JzL3ZlY3RvcjJTaWduYWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFrQixPQUFPLEVBQUMsTUFBTSxzQ0FBc0MsQ0FBQztBQUM5RSxPQUFPLEVBQUMsUUFBUSxFQUFDLE1BQU0sWUFBWSxDQUFDO0FBRXBDLE9BQU8sRUFBQyxPQUFPLEVBQUMsTUFBTSxVQUFVLENBQUM7QUFZakMsTUFBTSxVQUFVLGFBQWEsQ0FDM0IsTUFBd0M7SUFFeEMsT0FBTyxDQUFDLE1BQU0sRUFBRSxHQUFHLEVBQUUsRUFBRTtRQUNyQixRQUFRLENBQ04sT0FBTyxNQUFNLEtBQUssUUFBUTtZQUN4QixDQUFDLENBQUMsTUFBTTtZQUNSLENBQUMsQ0FBQztnQkFDRSxDQUFDLEVBQUUsTUFBTSxDQUFDLENBQUMsQ0FBQyxHQUFHLE1BQU0sR0FBRyxDQUFDLENBQUMsQ0FBQyxHQUFHO2dCQUM5QixDQUFDLEVBQUUsTUFBTSxDQUFDLENBQUMsQ0FBQyxHQUFHLE1BQU0sR0FBRyxDQUFDLENBQUMsQ0FBQyxHQUFHO2FBQy9CLENBQ04sQ0FBQyxNQUFNLEVBQUUsR0FBRyxDQUFDLENBQUM7UUFDZixPQUFPLENBQUMsT0FBTyxDQUFDLENBQUMsTUFBTSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2hDLENBQUMsQ0FBQztBQUNKLENBQUMifQ==

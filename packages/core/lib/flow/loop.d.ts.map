@@ -1,0 +1,1 @@
+{"version":3,"file":"loop.d.ts","sourceRoot":"","sources":["../../src/flow/loop.ts"],"names":[],"mappings":"AACA,OAAO,EAAC,eAAe,EAAC,MAAM,cAAc,CAAC;AAE7C;;GAEG;AACH,MAAM,WAAW,YAAY;IAC3B;;OAEG;IACH,CAAC,CAAC,EAAE,MAAM,GAAG,eAAe,GAAG,IAAI,CAAC;CACrC;AAGD;;;;;;;;;;;;;;;;;;;;;;;;;GAyBG;AACH,wBAAiB,IAAI,CACnB,UAAU,EAAE,MAAM,EAClB,OAAO,EAAE,YAAY,GACpB,eAAe,CASjB"}

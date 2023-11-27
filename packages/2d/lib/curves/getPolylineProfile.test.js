@@ -1,0 +1,16 @@
+import { describe, expect, test } from 'vitest';
+import { getPolylineProfile } from './getPolylineProfile';
+import { Vector2 } from '@motion-canvas/core/lib/types';
+describe('getPolylineProfile', () => {
+    test('Correct arc length', () => {
+        const profile = getPolylineProfile([
+            Vector2.zero,
+            Vector2.zero,
+            new Vector2(100, 0),
+            new Vector2(100, 100),
+            new Vector2(0, 100),
+        ], 0, true);
+        expect(profile.arcLength).toBe(400);
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0UG9seWxpbmVQcm9maWxlLnRlc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvY3VydmVzL2dldFBvbHlsaW5lUHJvZmlsZS50ZXN0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBQyxRQUFRLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBQyxNQUFNLFFBQVEsQ0FBQztBQUM5QyxPQUFPLEVBQUMsa0JBQWtCLEVBQUMsTUFBTSxzQkFBc0IsQ0FBQztBQUN4RCxPQUFPLEVBQUMsT0FBTyxFQUFDLE1BQU0sK0JBQStCLENBQUM7QUFFdEQsUUFBUSxDQUFDLG9CQUFvQixFQUFFLEdBQUcsRUFBRTtJQUNsQyxJQUFJLENBQUMsb0JBQW9CLEVBQUUsR0FBRyxFQUFFO1FBQzlCLE1BQU0sT0FBTyxHQUFHLGtCQUFrQixDQUNoQztZQUNFLE9BQU8sQ0FBQyxJQUFJO1lBQ1osT0FBTyxDQUFDLElBQUk7WUFDWixJQUFJLE9BQU8sQ0FBQyxHQUFHLEVBQUUsQ0FBQyxDQUFDO1lBQ25CLElBQUksT0FBTyxDQUFDLEdBQUcsRUFBRSxHQUFHLENBQUM7WUFDckIsSUFBSSxPQUFPLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FBQztTQUNwQixFQUNELENBQUMsRUFDRCxJQUFJLENBQ0wsQ0FBQztRQUVGLE1BQU0sQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQ3RDLENBQUMsQ0FBQyxDQUFDO0FBQ0wsQ0FBQyxDQUFDLENBQUMifQ==
