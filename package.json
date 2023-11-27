@@ -33,8 +33,7 @@
     "eslint": "eslint \"**/*.ts?(x)\"",
     "eslint:fix": "eslint --fix \"**/*.ts?(x)\"",
     "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "postinstall": "npm run core:build"
+    "prettier:fix": "prettier --write ."
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
