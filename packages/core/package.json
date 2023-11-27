@@ -11,7 +11,8 @@
     "dev": "ttsc -p tsconfig.build.json -w",
     "build": "ttsc -p tsconfig.build.json",
     "bundle": "rollup -c rollup.config.mjs",
-    "test": "vitest"
+    "test": "vitest",
+    "postinstall": "npm run build"
   },
   "sideEffects": false,
   "repository": {
